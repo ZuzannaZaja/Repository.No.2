@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Registry"
+    android:background="@android:color/black"
+    android:paddingLeft="30dp"
+    android:paddingTop="80dp"
+    android:paddingRight="30dp">
+    <TextView
+        android:id="@+id/layoutText"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:text="Join us!"
+        android:textSize="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TextInputLayout
+
+        android:id="@+id/layoutname"
+        android:layout_below="@id/layoutText"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/name"
+            android:backgroundTint="@color/colorPrimary2"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutemailregistry"
+        android:layout_width="match_parent"
+        android:layout_below="@id/layoutname"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/email"
+            android:backgroundTint="@color/colorPrimary2"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutpasswordregistry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutemailregistry"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/password"
+            android:backgroundTint="@color/colorPrimary2"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutconfirm"
+        android:layout_below="@id/layoutpasswordregistry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/c_password"
+            android:backgroundTint="@color/colorPrimary2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+    </android.support.design.widget.TextInputLayout>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_below="@id/layoutconfirm"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:backgroundTint="@color/colorPrimary2"
+        android:layout_below="@id/loading"
+        android:textColor="@android:color/white"
+        android:text="Register"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+
+
+
+
+</RelativeLayout>
