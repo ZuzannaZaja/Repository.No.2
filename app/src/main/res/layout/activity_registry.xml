@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:passwordToggleEnabled="true">
-        
+
 
         <EditText
             android:id="@+id/c_password"
@@ -93,6 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/btn_regist"
         android:backgroundTint="@color/colorPrimary2"
         android:layout_below="@id/loading"
         android:textColor="@android:color/white"
