@@ -23,11 +23,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private EditText email, password;
     private Button btn_login;
+    private Button btn_check;
     private TextView link_regist;
     private ProgressBar loading;
     private static String URL_LOGIN="http://192.168.0.38/login_and_register/login.php";
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
+        btn_check = findViewById(R.id.check);
         link_regist = findViewById(R.id.link_regist);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //check
+        btn_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LIst.class));
+            }
+        });
+
+
 
         link_regist.setOnClickListener(new View.OnClickListener() {
             @Override
