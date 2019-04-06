@@ -79,4 +79,15 @@
         android:text="Register"
         android:textColor="@android:color/white"/>
 
+    <Button
+        android:id="@+id/check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loading"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/colorPrimary2"
+        android:text="CHECK"
+        android:textColor="@android:color/white"/>
+
+
 </RelativeLayout>
