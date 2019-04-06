@@ -7,4 +7,11 @@
         <item> Resources </item>
     </string-array>
 
+    <string-array name= "Description">
+        <item> Description 1 </item>
+        <item> Description 2 </item>
+        <item> Description 3 </item>
+        <item> Description 4 </item>
+    </string-array>
+
 </resources>
