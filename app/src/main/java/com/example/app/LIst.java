@@ -42,7 +42,7 @@ public class LIst extends AppCompatActivity {
 
     private void initToolbar(){
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("App");
+        getSupportActionBar().setTitle("STUDIO 31");
     }
 
     private void setupListView(){
