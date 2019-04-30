@@ -1,5 +1,6 @@
 package com.example.app;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -9,19 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
 
-public class LIst extends AppCompatActivity {
+public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private android.support.v7.widget.Toolbar toolbar;
     private ListView listView;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +31,14 @@ public class LIst extends AppCompatActivity {
         initToolbar();
         setupListView();
 
+
+
     }
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+    }
 
     private void setupUIViews(){
         toolbar= (android.support.v7.widget.Toolbar) findViewById(R.id.ToolbarMain);

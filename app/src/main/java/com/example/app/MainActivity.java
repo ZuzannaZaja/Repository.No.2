@@ -1,10 +1,13 @@
 package com.example.app;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,11 +25,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private EditText email, password;
     private Button btn_login;
     private Button btn_check;
@@ -78,7 +83,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Registry.class));
             }
         });
+
+
+        //test
+        Button calendar = (Button) findViewById(R.id.calendar);
+        calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment datePicker = new com.example.app.DatePicker();
+                datePicker.show(getSupportFragmentManager(), "date picker");
+            }
+        });
     }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+
+    }
+
     private  void Login(final String email, final String password){
         loading.setVisibility(View.VISIBLE);
         btn_login.setVisibility(View.GONE);
