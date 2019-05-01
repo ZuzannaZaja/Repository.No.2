@@ -50,7 +50,7 @@ public class LIst extends AppCompatActivity {
         String[] description = getResources().getStringArray(R.array.Description);
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, title, description);
-        listView.setAdapter(simpleAdapter);
+        listView.setAdapter(simpleAdapter);// co to jest
     }
 
     public class SimpleAdapter extends BaseAdapter{
