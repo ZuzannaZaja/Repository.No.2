@@ -48,6 +48,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());//jakbysmy chcialy gdzies wyswitlic ta date wybrana
 
+
     }
 
     private void setupUIViews(){
@@ -136,9 +137,9 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
             description.setText(descriptionArray[position]);
 
             if(titleArray[position].equalsIgnoreCase("Calendar")){
-                imageView.setImageResource(R.drawable.book1);
+                imageView.setImageResource(R.drawable.calendar);
             }else if(titleArray[position].equalsIgnoreCase("Location")){
-                imageView.setImageResource(R.drawable.book1);
+                imageView.setImageResource(R.drawable.location);
             }else if(titleArray[position].equalsIgnoreCase("Faculty")){
                 imageView.setImageResource(R.drawable.book1);
             }else if(titleArray[position].equalsIgnoreCase("Resources")){
