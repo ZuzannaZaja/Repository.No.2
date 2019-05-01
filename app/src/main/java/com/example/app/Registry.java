@@ -27,7 +27,7 @@ public class Registry extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.0.38/login_and_register/register.php";
+    private static String URL_REGIST = "http://192.168.2.101/login_and_register/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class Registry extends AppCompatActivity {
                         }
                     }catch(JSONException e) {
                         e.printStackTrace();
-                        Toast.makeText(Registry.this, "Register Error!"+ e.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registry.this, "Register Error! JSON"+ e.toString(), Toast.LENGTH_SHORT).show();
                         loading.setVisibility(View.GONE);
                         btn_regist.setVisibility(View.VISIBLE);
 

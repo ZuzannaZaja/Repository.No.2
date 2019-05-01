@@ -3,6 +3,7 @@ package com.example.app;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
@@ -77,7 +78,11 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
                         break;
                     }
-                    case 1:{break;}
+                    case 1:{
+                        Uri url = Uri.parse("https://www.google.pl/maps/place/Wojska+Polskiego+185,+97-300+Piotrk%C3%B3w+Trybunalski/@51.4207792,19.6584067,17z/data=!3m1!4b1!4m5!3m4!1s0x471a207d03c69439:0x23a807bf3ccae274!8m2!3d51.4207759!4d19.6605954");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, url);
+                        startActivity(intent);
+                        break;}
                     case 2:{break;}
                     case 3:{break;}
 
@@ -132,7 +137,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
             if(titleArray[position].equalsIgnoreCase("Calendar")){
                 imageView.setImageResource(R.drawable.book1);
-            }else if(titleArray[position].equalsIgnoreCase("Subjects")){
+            }else if(titleArray[position].equalsIgnoreCase("Location")){
                 imageView.setImageResource(R.drawable.book1);
             }else if(titleArray[position].equalsIgnoreCase("Faculty")){
                 imageView.setImageResource(R.drawable.book1);

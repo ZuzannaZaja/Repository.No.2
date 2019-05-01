@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Button btn_check;
     private TextView link_regist;
     private ProgressBar loading;
-    private static String URL_LOGIN="http://192.168.0.38/login_and_register/login.php";
+    private static String URL_LOGIN="http://192.168.2.101/login_and_register/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            String succes = jsonObject.getString("success");
+                            String success = jsonObject.getString("success");
                             JSONArray jsonArray = jsonObject.getJSONArray("login");
 
-                            if(succes.equals("1")){
+                            if(success.equals("1")){
                                 for(int i=0; 1<jsonArray.length(); i++) {
                                     JSONObject object = jsonArray.getJSONObject(i);
 
@@ -117,15 +117,15 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                                     String email  = object.getString("email").trim();
 
                                     //displaying all paramiters on login screen
-                                    /*Toast.makeText(MainActivity.this,
+                                    Toast.makeText(MainActivity.this,
                                             "Success Login. \nYour Name : "
                                                     +name+"\nYour Email :"
                                                     +email+"", Toast.LENGTH_SHORT)
-                                            .show();*/
-                                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                                            .show();
+                                    /*Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("email", email);
-                                    startActivity(intent);
+                                    startActivity(intent);*/
 
                                     loading.setVisibility(View.GONE);
                                 }
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                             e.printStackTrace();
                             loading.setVisibility(View.GONE);
                             btn_login.setVisibility(View.VISIBLE);
-                            Toast.makeText(MainActivity.this, "Error"+e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Error JSON"+e.toString(), Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -163,9 +163,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     }
 
-    public void click(View view) {
+    /*public void click(View view) {
         Intent intent = new Intent(MainActivity.this, Registry.class);
         startActivity(intent);
 
-    }
+    }*/
 }
