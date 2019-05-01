@@ -89,15 +89,6 @@
         android:text="CHECK"
         android:textColor="@android:color/white"/>
 
-    <Button
-        android:id="@+id/calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loading"
-        android:layout_marginTop="165dp"
-        android:backgroundTint="@color/colorPrimary2"
-        android:text="date picker"
-        android:textColor="@android:color/white"/>
 
 
 </RelativeLayout>
