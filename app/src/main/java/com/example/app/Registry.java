@@ -70,8 +70,8 @@ public class Registry extends AppCompatActivity {
                         if(success.equals("1")){
                             Toast.makeText(Registry.this, "Register Success!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Registry.this, MainActivity.class);
-                            intent.putExtra("name", name);
-                            intent.putExtra("email", email);
+                            //intent.putExtra("name", name);
+                            //intent.putExtra("email", email);
                             startActivity(intent);
                         }
                     }catch(JSONException e) {
