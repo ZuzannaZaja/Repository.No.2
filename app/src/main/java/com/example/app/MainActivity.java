@@ -84,16 +84,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             }
         });
 
-
-        //test
-        Button calendar = (Button) findViewById(R.id.calendar);
-        calendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment datePicker = new com.example.app.DatePicker();
-                datePicker.show(getSupportFragmentManager(), "date picker");
-            }
-        });
     }
 
     @Override
