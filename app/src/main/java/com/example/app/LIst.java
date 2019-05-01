@@ -1,27 +1,31 @@
 package com.example.app;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 
 
-public class LIst extends AppCompatActivity {
+public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private android.support.v7.widget.Toolbar toolbar;
     private ListView listView;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,18 @@ public class LIst extends AppCompatActivity {
         initToolbar();
         setupListView();
 
-    }
 
+
+    }
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());//jakbysmy chcialy gdzies wyswitlic ta date wybrana
+
+    }
 
     private void setupUIViews(){
         toolbar= (android.support.v7.widget.Toolbar) findViewById(R.id.ToolbarMain);
@@ -50,7 +64,26 @@ public class LIst extends AppCompatActivity {
         String[] description = getResources().getStringArray(R.array.Description);
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, title, description);
-        listView.setAdapter(simpleAdapter);// co to jest
+        listView.setAdapter(simpleAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch(position){
+                    case 0: {
+                        //Intent intent = new Intent(LIst.this, com.example.app.DatePicker.class);//source and destination
+                        //startActivity(intent);
+                        DialogFragment datePicker= new com.example.app.DatePicker();
+                        datePicker.show(getSupportFragmentManager(),"date picker");
+
+                        break;
+                    }
+                    case 1:{break;}
+                    case 2:{break;}
+                    case 3:{break;}
+
+                }
+            }
+        });
     }
 
     public class SimpleAdapter extends BaseAdapter{
