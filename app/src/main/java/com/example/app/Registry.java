@@ -1,5 +1,6 @@
 package com.example.app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class Registry extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.2.101/login_and_register/register.php";
+    private static String URL_REGIST = "http://192.168.0.106/login_and_register/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,10 @@ public class Registry extends AppCompatActivity {
 
                         if(success.equals("1")){
                             Toast.makeText(Registry.this, "Register Success!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Registry.this, MainActivity.class);
+                            //intent.putExtra("name", name);
+                            //intent.putExtra("email", email);
+                            startActivity(intent);
                         }
                     }catch(JSONException e) {
                         e.printStackTrace();

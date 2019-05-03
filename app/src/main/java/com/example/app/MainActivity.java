@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Button btn_check;
     private TextView link_regist;
     private ProgressBar loading;
-    private static String URL_LOGIN="http://192.168.2.101/login_and_register/login.php";
+    private static String URL_LOGIN="http://192.168.0.106/login_and_register/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,34 +107,43 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String success = jsonObject.getString("success");
-                            JSONArray jsonArray = jsonObject.getJSONArray("login");
+                           // JSONArray jsonArray = jsonObject.getString("login");
 
                             if(success.equals("1")){
-                                for(int i=0; 1<jsonArray.length(); i++) {
-                                    JSONObject object = jsonArray.getJSONObject(i);
 
-                                    String name = object.getString("name").trim();
-                                    String email  = object.getString("email").trim();
+                                ///for(int i=0; 1<jsonArray.length(); i++) {
+                                    //JSONObject object = jsonArray.getJSONObject(i);
+
+                                    /*String name = object.getString("name").trim();
+                                    String email  = object.getString("email").trim();*/
+                                    String name = jsonObject.getString("name");
+                                    String email = jsonObject.getString("email");
 
                                     //displaying all paramiters on login screen
                                     Toast.makeText(MainActivity.this,
-                                            "Success Login. \nYour Name : "
-                                                    +name+"\nYour Email :"
-                                                    +email+"", Toast.LENGTH_SHORT)
+                                            "Success Login. \nHello "
+                                                    +name+"", Toast.LENGTH_SHORT)
                                             .show();
-                                    /*Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                                    Intent intent = new Intent(MainActivity.this, LIst.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("email", email);
-                                    startActivity(intent);*/
+                                    startActivity(intent);
 
                                     loading.setVisibility(View.GONE);
-                                }
+                                    btn_login.setVisibility(View.VISIBLE);
+                                //}
+                            }else{
+                                Toast.makeText(MainActivity.this,
+                                        "Login Error \nWrong Email or Password"
+
+                                                , Toast.LENGTH_SHORT)
+                                        .show();
                             }
                         }catch(JSONException e) {
                             e.printStackTrace();
                             loading.setVisibility(View.GONE);
                             btn_login.setVisibility(View.VISIBLE);
-                            Toast.makeText(MainActivity.this, "Error JSON"+e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Error JSON "+e.toString(), Toast.LENGTH_SHORT).show();
 
                         }
 
