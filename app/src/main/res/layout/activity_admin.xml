@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LIst">
+    tools:context=".AdminActivity">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -14,18 +14,12 @@
 
     </android.support.v7.widget.Toolbar>
 
-
-    <ListView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lvMain"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:dividerHeight="10dp"
         android:layout_below="@+id/ToolbarMain"
-        android:divider="@null">
+        android:layout_marginTop="503dp"
+        android:onClick="Scanner"
+        android:text="Skanuj" />
 
-    </ListView>
 </RelativeLayout>

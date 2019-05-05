@@ -28,7 +28,7 @@ public class Registry extends AppCompatActivity {
     private EditText name, email, password, c_password;
     private Button btn_regist;
     private ProgressBar loading;
-    private static String URL_REGIST = "http://192.168.0.106/login_and_register/register.php";
+    private static String URL_REGIST = "http://192.168.0.38/login_and_register/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

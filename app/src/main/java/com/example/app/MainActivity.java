@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Button btn_check;
     private TextView link_regist;
     private ProgressBar loading;
-    private static String URL_LOGIN="http://192.168.0.106/login_and_register/login.php";
+    private static String URL_LOGIN="http://192.168.0.38/login_and_register/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                                     String email  = object.getString("email").trim();*/
                                     String name = jsonObject.getString("name");
                                     String email = jsonObject.getString("email");
+                                    int points = jsonObject.getInt("points");
 
                                     //displaying all paramiters on login screen
                                     Toast.makeText(MainActivity.this,
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                                     Intent intent = new Intent(MainActivity.this, LIst.class);
                                     intent.putExtra("name", name);
                                     intent.putExtra("email", email);
+                                    intent.putExtra("points", points);
                                     startActivity(intent);
 
                                     loading.setVisibility(View.GONE);

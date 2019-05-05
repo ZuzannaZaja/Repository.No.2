@@ -10,6 +10,9 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -40,6 +43,8 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
 
     }
+
+
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Calendar calendar = Calendar.getInstance();
@@ -149,7 +154,42 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
             return convertView;
         }
+
+    }
+    //menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Profile:
+                Intent intentMain = getIntent();
+                String name = intentMain.getStringExtra("name");
+                String email = intentMain.getStringExtra("email");
+                int points = intentMain.getIntExtra("points", 0);
 
+                Intent intent = new Intent(LIst.this, HomeActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("points", points);
+                startActivity(intent);
+                return true;
+
+            case R.id.LogOut:
+                finish();
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+
+    }
 }
