@@ -146,7 +146,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
             }else if(titleArray[position].equalsIgnoreCase("Location")){
                 imageView.setImageResource(R.drawable.location);
             }else if(titleArray[position].equalsIgnoreCase("Services")){
-                imageView.setImageResource(R.drawable.hair);
+                imageView.setImageResource(R.drawable.hair1);
             }else if(titleArray[position].equalsIgnoreCase("Resources")){
                 imageView.setImageResource(R.drawable.book1);
             }
