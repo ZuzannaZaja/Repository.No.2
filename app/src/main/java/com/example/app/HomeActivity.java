@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         String extraName = intent.getStringExtra("name");
         String extraEmail = intent.getStringExtra("email");
         int extraPoints = intent.getIntExtra("points", 0);
-        
+
 
         name.setText(extraName);
         email.setText(extraEmail);
@@ -67,7 +67,8 @@ public class HomeActivity extends AppCompatActivity {
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -13,9 +13,12 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="371dp"
-        android:layout_height="151dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="233dp"
+        android:layout_height="86dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:src="@drawable/studio" />
 
     <android.support.design.widget.TextInputLayout
@@ -53,7 +56,7 @@
     </android.support.design.widget.TextInputLayout>
     <ProgressBar
         android:id="@+id/loading"
-        android:layout_below="@id/layoutpassword"
+        android:layout_below="@id/btn_login"
         android:layout_marginTop="30dp"
         android:visibility="gone"
         android:layout_width="match_parent"
@@ -63,7 +66,7 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loading"
+        android:layout_below="@id/layoutpassword"
         android:layout_marginTop="35dp"
         android:backgroundTint="@color/colorPrimary2"
         android:text="LOG IN"
@@ -71,23 +74,22 @@
 
     <TextView
         android:id="@+id/link_regist"
-        android:layout_marginBottom="30dp"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/check"
+        android:gravity="center"
         android:text="Register"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/check"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loading"
-        android:layout_marginTop="100dp"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginTop="3dp"
         android:backgroundTint="@color/colorPrimary2"
         android:text="CHECK"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
 
 
