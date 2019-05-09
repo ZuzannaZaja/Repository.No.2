@@ -21,9 +21,9 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        /*Date today = new Date();
+        Date today = new Date();
         Calendar nextYear = Calendar.getInstance();
-        nextYear.add(Calendar.YEAR,1);*/
+        nextYear.add(Calendar.YEAR,1);
 
         calendar = findViewById(R.id.calendar1);
         //dataPicker.init(today,nextYear.getTime()).withSelectedDate(today);

@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,7 +25,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 
-public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class LIst extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar toolbar;
     private ListView listView;
@@ -45,7 +44,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
     }
 
 
-    @Override
+    /*@Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);
@@ -54,7 +53,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());//jakbysmy chcialy gdzies wyswitlic ta date wybrana
 
 
-    }
+    }*/
 
     private void setupUIViews(){
         toolbar= (android.support.v7.widget.Toolbar) findViewById(R.id.ToolbarMain);
@@ -79,9 +78,10 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
                     case 0: {
                         //Intent intent = new Intent(LIst.this, com.example.app.DatePicker.class);//source and destination
                         //startActivity(intent);
-                        DialogFragment datePicker= new com.example.app.DatePicker();
-                        datePicker.show(getSupportFragmentManager(),"date picker");
-
+                        /*DialogFragment datePicker= new com.example.app.DatePicker();
+                        datePicker.show(getSupportFragmentManager(),"date picker");*/
+                        Intent intent = new Intent(LIst.this, DatePicker.class);
+                        startActivity(intent);
                         break;
                     }
                     case 1:{
@@ -91,8 +91,7 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
                         break;}
                     case 2:{
 
-                        Intent intent = new Intent(LIst.this, AdminActivity.class);
-                        startActivity(intent);
+
                         break;}
                     case 3:{break;}
 

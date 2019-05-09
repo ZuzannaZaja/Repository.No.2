@@ -1,36 +1,40 @@
 package com.example.app;
 
-import android.app.DatePickerDialog;
-import android.app.Dialog;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.view.MenuItem;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
+//import com.squareup.timessquare.CalendarPickerView;
+
+import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
-public class DatePicker extends DialogFragment {
-    @NonNull
+public class DatePicker extends AppCompatActivity {
+
+
+    private CalendarView calendar;
     @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calendar);
 
+        Date today = new Date();
+        Calendar nextYear = Calendar.getInstance();
+        nextYear.add(Calendar.YEAR,1);
 
-        return new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getActivity(),year, month, day);
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home : {
-
+        calendar = findViewById(R.id.calendar1);
+        //dataPicker.init(today,nextYear.getTime()).withSelectedDate(today);
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange( CalendarView view, int year, int month, int dayOfMonth) {
+                Intent intent = new Intent(DatePicker.this, DayActivity.class);
+                startActivity(intent);
             }
-        }
-        return super.onOptionsItemSelected(item);
+        });
+
+        
     }
 }

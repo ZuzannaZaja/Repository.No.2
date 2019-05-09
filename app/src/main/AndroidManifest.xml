@@ -20,7 +20,10 @@
         <activity
             android:name=".AdminActivity"
             android:screenOrientation="portrait" />
-        
+        <activity
+            android:name=".DatePicker"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Registry"
             android:screenOrientation="portrait" />
