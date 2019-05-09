@@ -89,7 +89,11 @@ public class LIst extends AppCompatActivity implements DatePickerDialog.OnDateSe
                         Intent intent = new Intent(Intent.ACTION_VIEW, url);
                         startActivity(intent);
                         break;}
-                    case 2:{break;}
+                    case 2:{
+
+                        Intent intent = new Intent(LIst.this, AdminActivity.class);
+                        startActivity(intent);
+                        break;}
                     case 3:{break;}
 
                 }
