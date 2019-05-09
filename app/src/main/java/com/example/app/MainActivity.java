@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObject = new JSONObject(response);//format odpowiedzi
                             String success = jsonObject.getString("success");
                            // JSONArray jsonArray = jsonObject.getString("login");
 
