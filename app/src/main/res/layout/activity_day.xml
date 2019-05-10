@@ -1,13 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DayActivity">
-<TextView
-    android:text="Tu bedzie rozkład dnia"
-    android:textAlignment="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:text="halo"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:id="@+id/ToolbarMain">
+
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_below="@id/ToolbarMain"
+        android:background="@color/darkness"
+        android:textSize="50dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/textViewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:text="CONFIRM"
+        android:id="@+id/textViewFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <ScrollView
+        android:layout_above="@id/textViewFooter"
+        android:layout_below="@id/textViewHeader"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        >
+        <RelativeLayout
+            android:layout_below="@id/textViewHeader"
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView android:text="9:00 "
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:id="@+id/hour9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="10:00 "
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:id="@+id/hour10"
+                android:layout_below="@id/hour9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="11:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:layout_below="@id/hour10"
+                android:id="@+id/hour11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="12:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:id="@+id/hour12"
+                android:layout_below="@id/hour11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="13:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:id="@+id/hour13"
+                android:layout_below="@id/hour12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="14:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:layout_below="@id/hour13"
+                android:id="@+id/hour14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="15:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:layout_below="@id/hour14"
+                android:id="@+id/hour15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView android:text="16:00"
+                android:textColor="@color/colorWhite"
+                android:textSize="@android:dimen/app_icon_size"
+                android:layout_below="@id/hour15"
+                android:id="@+id/hour16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText android:hint="Email"
+
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:id="@+id/view9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:id="@+id/view10"
+                android:layout_below="@id/view9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:layout_below="@id/view10"
+                android:id="@+id/view11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:id="@+id/view12"
+                android:layout_below="@id/view11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:id="@+id/view13"
+                android:layout_below="@id/view12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:layout_below="@id/view13"
+                android:id="@+id/view14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:layout_below="@id/view14"
+                android:id="@+id/view15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText android:hint="Email"
+                android:textColor="@android:color/darker_gray"
+                android:layout_alignParentRight="true"
+                android:textSize="32dp"
+                android:layout_below="@id/view15"
+                android:id="@+id/view16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </EditText>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
