@@ -94,6 +94,8 @@ public class LIst extends AppCompatActivity {
 
                         break;}
                     case 3:{break;}
+                    case 4:{break;}
+                    case 5:{break;}
 
                 }
             }
@@ -150,7 +152,7 @@ public class LIst extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.location);
             }else if(titleArray[position].equalsIgnoreCase("Services")){
                 imageView.setImageResource(R.drawable.hair1);
-            }else if(titleArray[position].equalsIgnoreCase("Resources")){
+            }else if(titleArray[position].equalsIgnoreCase("next item")){
                 imageView.setImageResource(R.drawable.book1);
             }
 

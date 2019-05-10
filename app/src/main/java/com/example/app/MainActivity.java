@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
-        btn_check = findViewById(R.id.check);
+        //btn_check = findViewById(R.id.check);
         link_regist = findViewById(R.id.link_regist);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -68,12 +68,13 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
 
         //check
+/*
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LIst.class));
             }
-        });
+        });*/
 
 
 

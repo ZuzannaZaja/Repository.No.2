@@ -13,12 +13,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="233dp"
-        android:layout_height="86dp"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:src="@drawable/studio" />
 
     <android.support.design.widget.TextInputLayout
@@ -76,20 +75,21 @@
         android:id="@+id/link_regist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/check"
         android:gravity="center"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginTop="20dp"
         android:text="Register"
         android:textColor="@android:color/white" />
 
-    <Button
+    <!--Button
         android:id="@+id/check"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_login"
         android:layout_marginTop="3dp"
-        android:backgroundTint="@color/colorPrimary2"
+        android:backgroundTint="@color/colorPrimary"
         android:text="CHECK"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"/-->
 
 
 
