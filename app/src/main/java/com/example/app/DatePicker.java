@@ -89,10 +89,7 @@ public class DatePicker extends AppCompatActivity {
                                 hours.add(jsonObject.getString("hour16"));
 
                                 //displaying all paramiters on login screen
-                                Toast.makeText(DatePicker.this,
-                                        "Success Login. \nHello "
-                                        , Toast.LENGTH_SHORT)
-                                        .show();
+
                                 Intent intent = new Intent(DatePicker.this, DayActivity.class);
                                 intent.putExtra("hours", hours);
                                 intent.putExtra("year", year);
@@ -105,13 +102,13 @@ public class DatePicker extends AppCompatActivity {
                                 //}
                             }else{
                                 Toast.makeText(DatePicker.this,
-                                        "Login Error \nWrong Email or Password"
+                                        "Error "
 
                                         , Toast.LENGTH_SHORT)
                                         .show();
                             }
                         }catch(JSONException e) {
-
+                            e.printStackTrace();
                             Toast.makeText(DatePicker.this, "Error JSON "+e.toString(), Toast.LENGTH_SHORT).show();
 
                         }
