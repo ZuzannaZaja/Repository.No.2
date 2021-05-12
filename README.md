@@ -3,8 +3,8 @@
 *Aplikacja fryzjer*
 
 
-Żeby działało super-fajnie to musi być uruchomiony serwer, zrobiona baza danych oraz pliki php na serwerze.
+Żeby działało super-fajnie to musi być uruchomiony serwer, zrobiona baza danych (php, MySQL) oraz pliki php na serwerze - folder login_and_register.
 Zadania do tego są w repo-cwiczenia
 
 
-Trzeba dorzucic pliki php z della
+
